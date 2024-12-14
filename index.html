@@ -1,176 +1,185 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Briamonte y Bustos</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Briamonte y Bustos</title>
+      <style>
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
 
-        :root {
-            --color-brown: #6C552B;
-            --color-sand: #DBA854;
-            --color-cream: #FEFEDA;
-            --color-gray: #363734;
-            --color-black: #0E0F11;
-        }
-	
+:root {
+	--MARRON: #6C552B;
+	--DORADO: #DBA854;
+	--CAMEL: #FEFEDA;
+	--GRIS: #363734;
+	--NEGRO: #0E0F11;
+	--AZUL: #0D1621;
+}
 
-        html {
-            scroll-behavior: smooth;
-            scroll-snap-type: y mandatory;
-            overflow-y: scroll;
-        }
+html {
+	scroll-behavior: smooth;
+	scroll-snap-type: y mandatory;
+	overflow-y: scroll;
+}
 
-        section {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            font-family: Arial, sans-serif;
-            color: white;
-            scroll-snap-align: start;
-            scroll-snap-stop: always;
-        }
+section {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	font-family: Arial, sans-serif;
+	scroll-snap-align: start;
+	scroll-snap-stop: always;
+	color: var(--DORADO);
+}
 
-        /* Navbar dentro de cada sección */
-        .navbar {
-		padding: clamp(0.5rem, 2vw, 1.5rem);
-            display: flex;
-            justify-content: flex-end;
-            gap: clamp(1rem, 3vw, 2.5rem);
-            /*background-color: rgba(0, 0, 0, 0.2);*/
-        }
+/* Navbar dentro de cada sección */
+.navbar {
+	padding: clamp(0.5rem, 2vw, 1.5rem);
+	display: flex;
+	justify-content: flex-end;
+	gap: clamp(1rem, 3vw, 2.5rem);
+}
 
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.2rem;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            transition: all 0.3s ease;
-	    padding: clamp(0.3rem, 1vw, 0.8rem) clamp(0.5rem, 2vw, 1rem);
+.navbar a {
+	color: var(--CAMEL);
+	text-decoration: none;
+	font-size: 1.2rem;
+	width: 40px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	transition: all 0.3s ease;
+	padding: clamp(0.3rem, 1vw, 0.8rem) clamp(0.5rem, 2vw, 1rem);
+}
 
-        }
+.navbar a:hover {
+}
 
-        .navbar a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-        }
+.navbar a.active {
+	background-color: white;
+}
 
-        .navbar a.active {
-            background-color: white;
-            color: black;
-        }
+/* Contenedor del contenido principal */
+.content {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 2rem;
+}
 
-        /* Contenedor del contenido principal */
-        .content {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 2rem;
-        }
+#inicio {
+	background-color: var(--AZUL); 
+}
 
-        #inicio { background-color: --color-gray;}
-        #estudio { background-color: --color-gray; }
-        #servicios_legales { background-color: --color-gray; }
-        #contacto { background-color: --color-gray; }
-    </style>
-</head>
-<body>
-    <section id="inicio">
-        <div class="navbar">
+#estudio {
+	background-color: var(--AZUL);
+}
+
+#servicios_legales {
+	background-color: var(--AZUL);
+}
+
+#contacto {
+	background-color: var(--AZUL);
+}
+      </style>
+   </head>
+   <body>
+      <section id="inicio">
+         <div class="navbar">
             <a href="#inicio">Inicio</a>
             <a href="#estudio">Nuestro Estudio</a>
             <a href="#servicios_legales">Servicios Legales</a>
             <a href="#contacto">Contacto</a>
-        </div>
-        <div class="content">
-		<h2>Inicio</h2>
-		<br>
-		<h2>Briamonte y Bustos</h2>
-		<br>
-		<h3>Abogados</h3>
-	</div>
-	<div class="CTA">
-		<button>ASESORAMIENTO</button>
-	</div>
-    </section>
-
-    <section id="estudio">
-        <div class="navbar">
+         </div>
+         <div class="content">
+            <h2>Inicio</h2>
+            <br>
+            <h2>Briamonte y Bustos</h2>
+            <br>
+            <h3>Abogados</h3>
+         </div>
+         <div class="CTA">
+            <button>ASESORAMIENTO</button>
+         </div>
+      </section>
+      <section id="estudio">
+         <div class="navbar">
             <a href="#inicio">Inicio</a>
             <a href="#estudio">Nuestro Estudio</a>
             <a href="#servicios_legales">Servicios Legales</a>
             <a href="#contacto">Contacto</a>
-        </div>
-	<div class="content"><h2>Nuestro Estudio</h2>
-	<p>Nos distinguen 15 años de experiencia en el ejercicio de la abogacía y una solida y permanente formación profesional</p>
-	<br>
-	<p>Creemos que la resolución rapida y eficiente de los conflictos legales es fundamental para el desarrollo de los proyectos de nuestros clientes.</p>
-	<br>
-	<p>Nos mantenemos en contacto permanente con nuestros representados brindandoles asesoramiento adecuado y oportuno en los momentos de mayor necesidad</p>
-	<br>
-	<p>Nuestro compromiso es su tranquilidad</p>
-	</div>
-	<div class="CTA">
-		<button>ASESORAMIENTO</button>
-	</div>
-    </section>
-
-    <section id="servicios_legales">
-        <div class="navbar">
+         </div>
+         <div class="content">
+            <h2>Nuestro Estudio</h2>
+            <p>Nos distinguen 15 años de experiencia en el ejercicio de la abogacía y una solida y permanente formación profesional</p>
+            <br>
+            <p>Creemos que la resolución rapida y eficiente de los conflictos legales es fundamental para el desarrollo de los proyectos de nuestros clientes.</p>
+            <br>
+            <p>Nos mantenemos en contacto permanente con nuestros representados brindandoles asesoramiento adecuado y oportuno en los momentos de mayor necesidad</p>
+            <br>
+            <p>Nuestro compromiso es su tranquilidad</p>
+         </div>
+         <div class="CTA">
+            <button>ASESORAMIENTO</button>
+         </div>
+      </section>
+      <section id="servicios_legales">
+         <div class="navbar">
             <a href="#inicio">Inicio</a>
             <a href="#estudio">Nuestro Estudio</a>
             <a href="#servicios_legales">Servicios Legales</a>
             <a href="#contacto">Contacto</a>
-        </div>
-	<div class="content"><h2>Servicios Legales</h2></div>
-	<div class="CTA">
-		<button>ASESORAMIENTO</button>
-	</div>
-    </section>
-
-    <section id="contacto">
-        <div class="navbar">
+         </div>
+         <div class="content">
+            <h2>Servicios Legales</h2>
+         </div>
+         <div class="CTA">
+            <button>ASESORAMIENTO</button>
+         </div>
+      </section>
+      <section id="contacto">
+         <div class="navbar">
             <a href="#inicio">Inicio</a>
             <a href="#estudio">Nuestro Estudio</a>
             <a href="#servicios_legales">Servicios Legales</a>
             <a href="#contacto">Contacto</a>
-        </div>
-	<div class="content"><h2>Contacto</h2></div>
-	<div class="CTA">
-		<button>ASESORAMIENTO</button>
-	</div>
-    </section>
-
-    <script>
-        const updateActiveLinks = () => {
-            const sections = document.querySelectorAll('section');
-            sections.forEach((section, index) => {
-                const rect = section.getBoundingClientRect();
-                if (rect.top >= -100 && rect.top <= 100) {
-                    // Actualizar todos los navbars
-                    document.querySelectorAll('.navbar a').forEach(link => {
-                        if (link.getAttribute('href') === '#' + section.id) {
-                            link.classList.add('active');
-                        } else {
-                            link.classList.remove('active');
-                        }
-                    });
-                }
-            });
-        };
-
-        window.addEventListener('scroll', updateActiveLinks);
-        updateActiveLinks(); // Inicializar estado activo
-    </script>
-</body>
+         </div>
+         <div class="content">
+            <h2>Contacto</h2>
+         </div>
+         <div class="CTA">
+            <button>ASESORAMIENTO</button>
+         </div>
+      </section>
+      <script>
+         const updateActiveLinks = () => {
+             const sections = document.querySelectorAll('section');
+             sections.forEach((section, index) => {
+                 const rect = section.getBoundingClientRect();
+                 if (rect.top >= -100 && rect.top <= 100) {
+                     // Actualizar todos los navbars
+                     document.querySelectorAll('.navbar a').forEach(link => {
+                         if (link.getAttribute('href') === '#' + section.id) {
+                             link.classList.add('active');
+                         } else {
+                             link.classList.remove('active');
+                         }
+                     });
+                 }
+             });
+         };
+         
+         window.addEventListener('scroll', updateActiveLinks);
+         updateActiveLinks(); // Inicializar estado activo
+      </script>
+   </body>
 </html>
