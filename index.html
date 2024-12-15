@@ -4,93 +4,11 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Briamonte y Bustos</title>
-      <style>
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-
-:root {
-	--MARRON: #6C552B;
-	--DORADO: #DBA854;
-	--CAMEL: #FEFEDA;
-	--GRIS: #363734;
-	--NEGRO: #0E0F11;
-	--AZUL: #0D1621;
-}
-
-html {
-	scroll-behavior: smooth;
-	scroll-snap-type: y mandatory;
-	overflow-y: scroll;
-}
-
-section {
-	height: 100vh;
-	display: flex;
-	flex-direction: column;
-	font-family: Arial, sans-serif;
-	scroll-snap-align: start;
-	scroll-snap-stop: always;
-	color: var(--DORADO);
-}
-
-/* Navbar dentro de cada sección */
-.navbar {
-	padding: clamp(0.5rem, 2vw, 1.5rem);
-	display: flex;
-	justify-content: flex-end;
-	gap: clamp(1rem, 3vw, 2.5rem);
-}
-
-.navbar a {
-	color: var(--CAMEL);
-	text-decoration: none;
-	font-size: 1.2rem;
-	width: 40px;
-	height: 40px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border-radius: 50%;
-	transition: all 0.3s ease;
-	padding: clamp(0.3rem, 1vw, 0.8rem) clamp(0.5rem, 2vw, 1rem);
-}
-
-.navbar a:hover {
-}
-
-.navbar a.active {
-	background-color: white;
-}
-
-/* Contenedor del contenido principal */
-.content {
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	font-size: 2rem;
-}
-
-#inicio {
-	background-color: var(--AZUL); 
-}
-
-#estudio {
-	background-color: var(--AZUL);
-}
-
-#servicios_legales {
-	background-color: var(--AZUL);
-}
-
-#contacto {
-	background-color: var(--AZUL);
-}
-      </style>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Alatsi&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Alatsi&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="static/css/styles.css">
    </head>
    <body>
       <section id="inicio">
@@ -107,9 +25,11 @@ section {
             <br>
             <h3>Abogados</h3>
          </div>
+	 <footer>
          <div class="CTA">
             <button>ASESORAMIENTO</button>
          </div>
+	 </footer>
       </section>
       <section id="estudio">
          <div class="navbar">
@@ -128,9 +48,11 @@ section {
             <br>
             <p>Nuestro compromiso es su tranquilidad</p>
          </div>
+	 <footer>
          <div class="CTA">
             <button>ASESORAMIENTO</button>
          </div>
+	 </footer>
       </section>
       <section id="servicios_legales">
          <div class="navbar">
@@ -142,9 +64,11 @@ section {
          <div class="content">
             <h2>Servicios Legales</h2>
          </div>
+	 <footer>
          <div class="CTA">
             <button>ASESORAMIENTO</button>
          </div>
+	 </footer>
       </section>
       <section id="contacto">
          <div class="navbar">
@@ -156,9 +80,11 @@ section {
          <div class="content">
             <h2>Contacto</h2>
          </div>
+	 <footer>
          <div class="CTA">
             <button>ASESORAMIENTO</button>
          </div>
+	 </footer>
       </section>
       <script>
          const updateActiveLinks = () => {
