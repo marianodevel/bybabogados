@@ -23,7 +23,7 @@ section {
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
-	font-family: Afacad, sans-serif;
+	font-family: "Afacad", sans-serif;
 	scroll-snap-align: start;
 	scroll-snap-stop: always;
 	color: var(--DORADO);
