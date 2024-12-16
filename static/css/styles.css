@@ -57,8 +57,7 @@ nav a {
 	padding: clamp(0.3rem, 1vw, 0.8rem) clamp(0.5rem, 2vw, 1rem);
 }
 
-nav a:hover {
-}
+nav a:hover {}
 
 nav a.active {
 	background-color: white;
@@ -69,19 +68,23 @@ footer {
 	flex-direction: row;
 }
 
+footer > * {
+    flex: 1;
+}
+
 .container {
 	background-color: var(--CAMEL);
- filter: drop-shadow(5px 5px 5px var(--DORADO));
-    border-radius: 5%;
-    margin: clamp(1rem, 3vw, 3rem);
+	filter: drop-shadow(5px 5px 5px var(--DORADO));
+	border-radius: 5%;
+	margin: clamp(1rem, 3vw, 3rem);
 }
 
 .card {
 	background-color: var(--CAMEL);
- filter: drop-shadow(5px 5px 5px var(--DORADO));
-    border-radius: 5%;
-    margin: clamp(1rem, 3vw, 3rem);
-    }
+	filter: drop-shadow(5px 5px 5px var(--DORADO));
+	border-radius: 5%;
+	margin: clamp(1rem, 3vw, 3rem);
+}
 
 
 button {
@@ -110,12 +113,13 @@ button {
 }
 
 #inicio {
-	background-image: url("../images/libros.png"); 
+	background-image: url("../images/libros.png");
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
 }
 
-#estudio, #servicios_legales, #contacto {
-
+#estudio,
+#servicios_legales,
+#contacto {
 	background-color: var(--AZUL);
 }
