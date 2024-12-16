@@ -19,15 +19,18 @@ html {
 	overflow-y: scroll;
 }
 
-h2 {
+body {
 	font-family: "Alatsi", sans-serif;
+}
+
+h2 {
+	font-family: "Afacad", sans-serif;
 }
 
 section {
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
-	font-family: "Afacad", sans-serif;
 	scroll-snap-align: start;
 	scroll-snap-stop: always;
 	color: var(--DORADO);
@@ -66,6 +69,12 @@ footer {
 	flex-direction: row;
 }
 
+.container {
+	background-color: var(--CAMEL);
+ filter: drop-shadow(5px 5px 5px var(--DORADO));
+    border-radius: 5%;
+    margin: clamp(1rem, 3vw, 3rem);
+}
 
 .content {
 	flex: 1;
