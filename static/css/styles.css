@@ -76,6 +76,25 @@ footer {
     margin: clamp(1rem, 3vw, 3rem);
 }
 
+.card {
+	background-color: var(--CAMEL);
+ filter: drop-shadow(5px 5px 5px var(--DORADO));
+    border-radius: 5%;
+    margin: clamp(1rem, 3vw, 3rem);
+    }
+
+
+button {
+	height: 80%;
+	font-family: "Alatsi", sans-serif;
+	color: var(--CAMEL);
+	border: 1px solid var(--DORADO);
+	border-radius: 25%;
+	background-color: var(--GRIS);
+	filter: drop-shadow(4px 4px 4px var(--DORADO));
+
+}
+
 .content {
 	flex: 1;
 	display: flex;
