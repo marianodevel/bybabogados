@@ -23,9 +23,13 @@ body {
 	font-family: "Alatsi", sans-serif;
 }
 
+h1{}
+
 h2 {
 	font-family: "Afacad", sans-serif;
 }
+
+h3{}
 
 section {
 	height: 100vh;
@@ -37,10 +41,8 @@ section {
 }
 
 nav {
-	padding: clamp(0.5rem, 2vw, 1.5rem);
 	display: flex;
-	justify-content: flex-end;
-	gap: clamp(1rem, 3vw, 2.5rem);
+	justify-content: space-around;
 }
 
 nav a {
@@ -54,7 +56,6 @@ nav a {
 	justify-content: center;
 	border-radius: 50%;
 	transition: all 0.3s ease;
-	padding: clamp(0.3rem, 1vw, 0.8rem) clamp(0.5rem, 2vw, 1rem);
 }
 
 nav a:hover {}
@@ -86,7 +87,6 @@ footer > * {
 	margin: clamp(1rem, 3vw, 3rem);
 }
 
-
 button {
 	height: 80%;
 	font-family: "Alatsi", sans-serif;
@@ -95,7 +95,6 @@ button {
 	border-radius: 25%;
 	background-color: var(--GRIS);
 	filter: drop-shadow(4px 4px 4px var(--DORADO));
-
 }
 
 .content {
@@ -113,11 +112,19 @@ button {
 }
 
 #inicio {
-	background-image: url("../images/libros.png");
-	background-size: 100% 100%;
+	background: hsla(220, 10%, 6%, 1);
+
+background: radial-gradient(circle, hsla(220, 10%, 6%, 1) 0%, hsla(80, 3%, 21%, 1) 50%, hsla(213, 43%, 9%, 1) 100%);
+
+background: -moz-radial-gradient(circle, hsla(220, 10%, 6%, 1) 0%, hsla(80, 3%, 21%, 1) 50%, hsla(213, 43%, 9%, 1) 100%);
+
+background: -webkit-radial-gradient(circle, hsla(220, 10%, 6%, 1) 0%, hsla(80, 3%, 21%, 1) 50%, hsla(213, 43%, 9%, 1) 100%);bbackground-image: url("../images/libros.png");
+	background-size: auto;
 	background-repeat: no-repeat;
+	background-position: center;
 }
 
+#inicio,
 #estudio,
 #servicios_legales,
 #contacto {

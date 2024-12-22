@@ -6,7 +6,14 @@
       <title>Briamonte y Bustos</title>
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Alatsi&display=swap" rel="stylesheet">
+      <link rel="preload" 
+         as="style" 
+         href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap">
+      <link rel="stylesheet"
+         href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap"
+         media="print" 
+         onload="this.media='all'">
+      <link rel="preload" href="static/css/styles.css" as="style">
       <link rel="stylesheet" href="static/css/styles.css">
    </head>
    <body>
@@ -19,11 +26,9 @@
          </nav>
          <div class="content">
             <div class="text-content">
-               <h2>Inicio</h2>
+               <h1>Briamonte y Bustos</h1>
                <br>
-               <h2>Briamonte y Bustos</h2>
-               <br>
-               <h3>Abogados</h3>
+               <h2>Abogados</h2>
             </div>
          </div>
          <footer>
@@ -77,56 +82,56 @@
                <h2>Servicios Legales</h2>
             </div>
             <div class="card" id="familia">
-		    <div class="card_image">
-		    <img src="static/images/familia.jpg" alt="familia">
-		    </div>
+               <div class="card_image">
+                  <img src="static/images/familia.jpg" alt="familia">
+               </div>
                <h3>Derecho de Familia</h3>
-	       <ul>
-		       <li>divorcios</li>
-		       <li>alimentos</li>
-		       <li>cuidado personal</li>
-		       <li>regimen de comunicacion</li>
-		       <li>autorizaciones de viaje</li>
-	       </ul>
+               <ul>
+                  <li>divorcios</li>
+                  <li>alimentos</li>
+                  <li>cuidado personal</li>
+                  <li>regimen de comunicacion</li>
+                  <li>autorizaciones de viaje</li>
+               </ul>
             </div>
             <div class="card" id="civil">
-		    <div class="card_image">
-		    <img src="static/images/accidente_transito.jpeg" alt="accidente de transito">
-		    </div>
+               <div class="card_image">
+                  <img src="static/images/accidente_transito.jpeg" alt="accidente de transito">
+               </div>
                <h3>Derecho Civil</h3>
-	       <ul>
-		       <li>sucesiones</li>
-		       <li>contratos</li>
-		       <li>desalojos</li>
-		       <li>cobro de pesos</li>
-		       <li>accidentes de transito</li>
-	       </ul>
+               <ul>
+                  <li>sucesiones</li>
+                  <li>contratos</li>
+                  <li>desalojos</li>
+                  <li>cobro de pesos</li>
+                  <li>accidentes de transito</li>
+               </ul>
             </div>
             <div class="card" id="administrativo">
-		    <div class="card_image">
-		    <img src="static/images/casa_gobierno_santa_cruz.jpg" alt="casa de gobierno de Santa Cruz">
-		    </div>
+               <div class="card_image">
+                  <img src="static/images/casa_gobierno_santa_cruz.jpg" alt="casa de gobierno de Santa Cruz">
+               </div>
                <h3>Derecho Administrativo</h3>
-	       <ul>
-		       <li>amparos</li>
-		       <li>reclamos administrativos</li>
-		       <li>regimen disciplinario Policia, Fuerzas Armadas y de Seguridad</li>
-		       <li>servicios publicos</li>
-		       <li>jubilaciones</li>
-	       </ul>
+               <ul>
+                  <li>amparos</li>
+                  <li>reclamos administrativos</li>
+                  <li>regimen disciplinario Policia, Fuerzas Armadas y de Seguridad</li>
+                  <li>servicios publicos</li>
+                  <li>jubilaciones</li>
+               </ul>
             </div>
             <div class="card" id="penal">
-		    <div class="card_image">
-		    <img src="static/images/esposas.jpg" alt="esposas">
-		    </div>
+               <div class="card_image">
+                  <img src="static/images/esposas.jpg" alt="esposas">
+               </div>
                <h3>Derecho Penal</h3>
-	       <ul>
-		       <li>defensas</li>
-		       <li>excarcelaciones</li>
-		       <li>querellas</li>
-		       <li>denuncias</li>
-		       <li>violencia domestica</li>
-	       </ul>
+               <ul>
+                  <li>defensas</li>
+                  <li>excarcelaciones</li>
+                  <li>querellas</li>
+                  <li>denuncias</li>
+                  <li>violencia domestica</li>
+               </ul>
             </div>
          </div>
          <footer>
@@ -151,6 +156,23 @@
          <div class="content">
             <div class="container">
                <h2>Contacto</h2>
+	       <div class="text-container">
+		       <p>Contáctese con nosotros a los siguientes telefonos:</p>
+		       <span><img><p></p></span>
+		       <span><img><p></p></span>
+		       <p>(solo WhatsApp)</p>
+		       <p>O envienos un mensaje a nuestras redes:</p>
+		       <span><img></span>
+		       <span><img></span>
+		       <p>Por urgencias, comunicarse telefonicamente al</p>
+		       <span><i></span>
+	       </div>
+	       <div class="image-container">
+		       <div class="img">
+		       </div>
+		       <div class="text">
+		       </div>
+	       </div>
             </div>
          </div>
          <footer>
