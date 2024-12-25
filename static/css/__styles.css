@@ -1,0 +1,132 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--MARRON: #6C552B;
+	--DORADO: #DBA854;
+	--CAMEL: #FEFEDA;
+	--GRIS: #363734;
+	--NEGRO: #0E0F11;
+	--AZUL: #0D1621;
+}
+
+html {
+	scroll-behavior: smooth;
+	scroll-snap-type: y mandatory;
+	overflow-y: scroll;
+}
+
+body {
+	font-family: "Alatsi", sans-serif;
+}
+
+h1{}
+
+h2 {
+	font-family: "Afacad", sans-serif;
+}
+
+h3{}
+
+section {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	scroll-snap-align: start;
+	scroll-snap-stop: always;
+	color: var(--DORADO);
+}
+
+nav {
+	display: flex;
+	justify-content: space-around;
+}
+
+nav a {
+	color: var(--CAMEL);
+	text-decoration: none;
+	font-size: 1.2rem;
+	width: 40px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	transition: all 0.3s ease;
+}
+
+nav a:hover {}
+
+nav a.active {
+	background-color: white;
+}
+
+footer {
+	display: flex;
+	flex-direction: row;
+}
+
+footer > * {
+    flex: 1;
+}
+
+.container {
+	background-color: var(--CAMEL);
+	filter: drop-shadow(5px 5px 5px var(--DORADO));
+	border-radius: 5%;
+	margin: clamp(1rem, 3vw, 3rem);
+}
+
+.card {
+	background-color: var(--CAMEL);
+	filter: drop-shadow(5px 5px 5px var(--DORADO));
+	border-radius: 5%;
+	margin: clamp(1rem, 3vw, 3rem);
+}
+
+button {
+	height: 80%;
+	font-family: "Alatsi", sans-serif;
+	color: var(--CAMEL);
+	border: 1px solid var(--DORADO);
+	border-radius: 25%;
+	background-color: var(--GRIS);
+	filter: drop-shadow(4px 4px 4px var(--DORADO));
+}
+
+.content {
+	flex: 1;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	font-size: 2rem;
+}
+
+.text-content {
+	display: flex;
+	flex-direction: column;
+}
+
+#inicio {
+	background: hsla(220, 10%, 6%, 1);
+
+background: radial-gradient(circle, hsla(220, 10%, 6%, 1) 0%, hsla(80, 3%, 21%, 1) 50%, hsla(213, 43%, 9%, 1) 100%);
+
+background: -moz-radial-gradient(circle, hsla(220, 10%, 6%, 1) 0%, hsla(80, 3%, 21%, 1) 50%, hsla(213, 43%, 9%, 1) 100%);
+
+background: -webkit-radial-gradient(circle, hsla(220, 10%, 6%, 1) 0%, hsla(80, 3%, 21%, 1) 50%, hsla(213, 43%, 9%, 1) 100%);bbackground-image: url("../images/libros.png");
+	background-size: auto;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#inicio,
+#estudio,
+#servicios_legales,
+#contacto {
+	background-color: var(--AZUL);
+}

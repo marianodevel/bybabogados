@@ -1,132 +1,187 @@
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+/* styles.css */
+:root {
+    /* Color system */
+    --MARRON: #6C552B;
+    --DORADO: #DBA854;
+    --CAMEL: #FEFEDA;
+    --GRIS: #363734;
+    --NEGRO: #0E0F11;
+    --AZUL: #0D1621;
+    
+    /* Typography */
+    --font-primary: 'Afacad', sans-serif;
+    --font-secondary: 'Alatsi', sans-serif;
+    
+    /* Spacing system */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
 }
 
-:root {
-	--MARRON: #6C552B;
-	--DORADO: #DBA854;
-	--CAMEL: #FEFEDA;
-	--GRIS: #363734;
-	--NEGRO: #0E0F11;
-	--AZUL: #0D1621;
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html {
-	scroll-behavior: smooth;
-	scroll-snap-type: y mandatory;
-	overflow-y: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
 }
 
 body {
-	font-family: "Alatsi", sans-serif;
+    font-family: var(--font-secondary);
+    background-color: var(--AZUL);
+    color: var(--CAMEL);
 }
 
-h1{}
-
-h2 {
-	font-family: "Afacad", sans-serif;
+/* Typography */
+h1, h2, h3 {
+    font-family: var(--font-primary);
+    color: var(--DORADO);
 }
 
-h3{}
-
+/* Layout Components */
 section {
-	height: 100vh;
-	display: flex;
-	flex-direction: column;
-	scroll-snap-align: start;
-	scroll-snap-stop: always;
-	color: var(--DORADO);
+    min-height: 100vh;
+    scroll-snap-align: start;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
 }
 
+/* Navigation */
 nav {
-	display: flex;
-	justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    justify-content: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    background-color: rgba(13, 22, 33, 0.9);
+    top: 0;
+    z-index: 100;
 }
 
 nav a {
-	color: var(--CAMEL);
-	text-decoration: none;
-	font-size: 1.2rem;
-	width: 40px;
-	height: 40px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border-radius: 50%;
-	transition: all 0.3s ease;
+    color: var(--CAMEL);
+    text-decoration: none;
+    padding: var(--spacing-sm);
+    border-radius: 25px;
+    transition: all 0.3s ease;
 }
 
-nav a:hover {}
-
-nav a.active {
-	background-color: white;
+nav a:hover {
+    background-color: var(--DORADO);
+    color: var(--AZUL);
 }
 
-footer {
-	display: flex;
-	flex-direction: row;
+/* Content Layouts */
+.content {
+    display: grid;
+    padding: var(--spacing-lg);
+    gap: var(--spacing-md);
 }
 
-footer > * {
-    flex: 1;
+/* Hero Section */
+#inicio .content {
+    place-items: center;
+    text-align: center;
+    background: radial-gradient(circle, var(--NEGRO) 0%, var(--GRIS) 50%, var(--AZUL) 100%), url("../images/libros.png");
+    
 }
 
-.container {
-	background-color: var(--CAMEL);
-	filter: drop-shadow(5px 5px 5px var(--DORADO));
-	border-radius: 5%;
-	margin: clamp(1rem, 3vw, 3rem);
+/* Studio Section */
+#estudio .container {
+    background-color: var(--CAMEL);
+    border-radius: 20px;
+    padding: var(--spacing-lg);
+    color: var(--AZUL);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Services Section */
+#servicios_legales .content {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
 }
 
 .card {
-	background-color: var(--CAMEL);
-	filter: drop-shadow(5px 5px 5px var(--DORADO));
-	border-radius: 5%;
-	margin: clamp(1rem, 3vw, 3rem);
+    background-color: var(--CAMEL);
+    border-radius: 15px;
+    padding: var(--spacing-md);
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    gap: var(--spacing-sm);
+    color: var(--AZUL);
 }
 
-button {
-	height: 80%;
-	font-family: "Alatsi", sans-serif;
-	color: var(--CAMEL);
-	border: 1px solid var(--DORADO);
-	border-radius: 25%;
-	background-color: var(--GRIS);
-	filter: drop-shadow(4px 4px 4px var(--DORADO));
+.card_image {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
-.content {
-	flex: 1;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	font-size: 2rem;
+.card_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.text-content {
-	display: flex;
-	flex-direction: column;
+/* Contact Section */
+#contacto .container {
+    background-color: var(--CAMEL);
+    border-radius: 20px;
+    padding: var(--spacing-xl);
+    color: var(--AZUL);
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    gap: var(--spacing-lg);
 }
 
-#inicio {
-	background: hsla(220, 10%, 6%, 1);
-
-background: radial-gradient(circle, hsla(220, 10%, 6%, 1) 0%, hsla(80, 3%, 21%, 1) 50%, hsla(213, 43%, 9%, 1) 100%);
-
-background: -moz-radial-gradient(circle, hsla(220, 10%, 6%, 1) 0%, hsla(80, 3%, 21%, 1) 50%, hsla(213, 43%, 9%, 1) 100%);
-
-background: -webkit-radial-gradient(circle, hsla(220, 10%, 6%, 1) 0%, hsla(80, 3%, 21%, 1) 50%, hsla(213, 43%, 9%, 1) 100%);bbackground-image: url("../images/libros.png");
-	background-size: auto;
-	background-repeat: no-repeat;
-	background-position: center;
+/* Footer */
+footer {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    place-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
 }
 
-#inicio,
-#estudio,
-#servicios_legales,
-#contacto {
-	background-color: var(--AZUL);
+.CTA button {
+    background-color: var(--GRIS);
+    color: var(--CAMEL);
+    border: 1px solid var(--DORADO);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: 25px;
+    font-family: var(--font-secondary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.CTA button:hover {
+    background-color: var(--DORADO);
+    color: var(--AZUL);
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+    #contacto .container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 1024px) {
+    .content {
+        padding: var(--spacing-xl);
+    }
+    
+    nav {
+        gap: var(--spacing-xl);
+    }
 }
