@@ -32,6 +32,13 @@ html {
   scroll-behavior: smooth;
 }
 
+/* ACCESIBILIDAD: Respetar preferencia de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body {
   font-family: var(--font-secondary);
   color: var(--CAMEL);
@@ -51,6 +58,12 @@ body {
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
+}
+
+/* ACCESIBILIDAD: Indicador de foco visible para navegación con teclado */
+:focus-visible {
+  outline: 3px solid var(--DORADO);
+  outline-offset: 4px;
 }
 
 p {
