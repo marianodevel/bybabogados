@@ -8,9 +8,9 @@
   --NEGRO: #0e0f11;
   --AZUL: #0d1621;
 
-  /* Typography: Merriweather para autoridad en títulos, Alatsi para modernidad en texto */
+  /* Typography */
   --font-primary: "Merriweather", serif;
-  --font-secondary: "Alatsi", sans-serif;
+  --font-secondary: "Open Sans", sans-serif;
 
   /* Spacing & Layout */
   --spacing-sm: 1rem;
@@ -32,7 +32,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/* ACCESIBILIDAD: Respetar movimiento reducido */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -41,20 +40,17 @@ html {
 
 body {
   font-family: var(--font-secondary);
-  color: var(--CAMEL);
-
-  /* MEJORA: Aumentamos el tamaño base para que Alatsi sea legible y cómoda */
-  font-size: 1.125rem; /* aprox 18px */
-  line-height: 1.6;
-
+  color: var(--AZUL);
+  font-size: 1.125rem;
+  line-height: 1.7;
   padding-top: var(--nav-height);
 
-  /* FONDO PRINCIPAL DEL SITIO */
+  /* FONDO */
   background:
     radial-gradient(
       circle,
-      rgba(14, 15, 17, 0.85) 0%,
-      rgba(54, 55, 52, 0.9) 100%
+      rgba(14, 15, 17, 0.7) 0%,
+      rgba(54, 55, 52, 0.8) 100%
     ),
     url("../images/libros.webp");
   background-color: var(--AZUL);
@@ -64,9 +60,8 @@ body {
   background-repeat: no-repeat;
 }
 
-/* ACCESIBILIDAD: Foco visible de alto contraste */
 :focus-visible {
-  outline: 3px solid var(--DORADO);
+  outline: 2px solid var(--DORADO);
   outline-offset: 4px;
 }
 
@@ -92,34 +87,36 @@ nav {
   left: 0;
   width: 100%;
   height: var(--nav-height);
+  /* Fondo oscuro con ligera transparencia */
   background-color: rgba(13, 22, 33, 0.95);
-  backdrop-filter: blur(5px);
   z-index: 1000;
-
   display: flex;
   justify-content: center;
   align-items: center;
   gap: var(--spacing-md);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   transition: height 0.3s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 nav a {
   color: var(--CAMEL);
   text-decoration: none;
   padding: 0.5rem 1rem;
-  border-radius: 2rem;
+  border-radius: 4px;
   transition: all 0.3s ease;
   font-size: 1rem;
+  font-weight: 600;
 }
 
 nav a:hover,
 nav a.active {
-  background-color: var(--DORADO);
-  color: var(--AZUL);
+  background-color: rgba(219, 168, 84, 0.15);
+  color: var(--DORADO);
+  border: 1px solid var(--DORADO);
 }
 
-/* Sections General */
+/* Sections */
 section {
   min-height: calc(100vh - var(--nav-height));
   padding: var(--spacing-xl) var(--spacing-md);
@@ -129,7 +126,6 @@ section {
   background: transparent;
 }
 
-/* Layout Utilities */
 .content {
   width: 100%;
   max-width: var(--container-width);
@@ -138,7 +134,7 @@ section {
   gap: var(--spacing-lg);
 }
 
-/* Hero Section Specifics */
+/* Hero */
 #inicio {
   text-align: center;
   background: transparent !important;
@@ -152,22 +148,24 @@ section {
   font-weight: 900;
 }
 
-/* Button Styles */
+/* Button */
 .button {
   display: inline-block;
   background-color: var(--DORADO);
   color: var(--AZUL);
   border: 2px solid var(--DORADO);
   padding: 0.8rem 2.5rem;
-  border-radius: 2rem;
+  border-radius: 4px;
   text-decoration: none;
   font-weight: bold;
   font-family: var(--font-secondary);
   transition: all 0.3s ease;
   cursor: pointer;
   margin-top: var(--spacing-md);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .button:hover {
@@ -175,55 +173,93 @@ section {
   border-color: #eec170;
   color: var(--AZUL);
   transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 15px rgba(219, 168, 84, 0.4);
 }
 
-/* Containers */
-.container {
-  background-color: var(--CAMEL);
-  border-radius: 1.25rem;
-  padding: var(--spacing-lg);
+/* --- ESTILO GLASS "NATURAL" (Sin filtros pesados) --- */
+.container,
+.card {
+  /* Transparencia del 90%: Deja ver sutilmente el fondo borroso detrás */
+  background-color: rgba(254, 254, 218, 0.9);
+
+  /* Borde blanco semitransparente para definir el límite del "vidrio" */
+  border: 1px solid rgba(255, 255, 255, 0.4);
+
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15); /* Sombra suave para despegar del fondo */
   color: var(--AZUL);
-  width: 100%;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* --- SERVICES GRID FIX --- */
+.container {
+  padding: var(--spacing-lg);
+  width: 100%;
+}
+
+/* Services Grid */
 .cards-grid {
   display: grid;
-  /* CORRECCIÓN: Reducimos el minmax a 13.5rem para permitir que entren 4 columnas
-     en laptops estándar (aprox 1100px de ancho disponible) */
   grid-template-columns: repeat(auto-fit, minmax(13.5rem, 1fr));
   gap: var(--spacing-lg);
 }
-/* ------------------------- */
 
 .card {
-  background-color: var(--CAMEL);
-  border-radius: 1rem;
-  padding: var(--spacing-md);
-  color: var(--AZUL);
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   gap: var(--spacing-sm);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s,
+    box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  /* Al hacer hover, aumentamos la opacidad y la sombra */
+  background-color: rgba(254, 254, 218, 0.98);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+.card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+  border-bottom: 2px solid var(--DORADO);
+  padding-bottom: 0.5rem;
+  display: inline-block;
+  width: fit-content;
 }
 
 .card ul {
   padding-left: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.card li {
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 .card_image {
   width: 100%;
   aspect-ratio: 4/3;
-  border-radius: 0.5rem;
+  border-radius: 4px;
   overflow: hidden;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .card_image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.card:hover .card_image img {
+  transform: scale(1.05);
 }
 
 /* Contact Styles */
@@ -231,58 +267,110 @@ section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--spacing-lg);
+  align-items: start;
+}
+
+.intro-text {
+  margin-bottom: var(--spacing-md);
 }
 
 .contact-info {
+  margin-bottom: 0.8rem;
+}
+
+.contact-info a {
   display: flex;
   align-items: center;
-  gap: var(--spacing-sm);
+  gap: 12px;
+  color: inherit;
+  text-decoration: none;
   font-size: 1.2rem;
-  font-weight: bold;
+  font-weight: 400;
+  transition: color 0.2s;
+}
+
+.contact-info a:hover {
+  color: #5a4622;
 }
 
 .contact-info img {
   width: 2rem;
   height: 2rem;
+  flex-shrink: 0;
+}
+
+.note {
+  font-size: 0.9rem;
+  opacity: 0.75;
+  margin-top: -0.5rem;
+  margin-bottom: 1.5rem;
+  margin-left: 2.8rem;
+}
+
+.address-item {
+  margin-top: 1.5rem;
+}
+
+.social-text {
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
 }
 
 .social-media {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--spacing-sm);
-  margin: var(--spacing-sm) 0;
+  flex-direction: row;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
 }
 
 .social-media img {
   width: 2.5rem;
   height: 2.5rem;
   transition: transform 0.2s;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
 .social-media img:hover {
   transform: scale(1.1);
 }
 
-.note {
-  font-size: 0.95rem;
+.urgencies {
+  margin-top: 1rem;
+  border-top: 1px solid rgba(13, 22, 33, 0.1);
+  padding-top: 1.5rem;
+}
+
+.urgencies p {
+  margin-bottom: 0.5rem;
+}
+
+.phone-wrapper a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.phone-wrapper a:hover {
   opacity: 0.8;
 }
 
 .highlight {
-  font-size: 1.3rem;
-  font-weight: bold;
-  color: var(--AZUL);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #000;
 }
 
 /* Contact Image */
 .contact-image {
   width: 100%;
   height: 100%;
-  min-height: 300px;
-  border-radius: 1rem;
+  min-height: 350px;
+  border-radius: 4px;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .contact-image img {
@@ -293,7 +381,7 @@ section {
 
 /* Footer */
 footer {
-  background-color: rgba(13, 22, 33, 0.9);
+  background-color: rgba(13, 22, 33, 0.95);
   padding: var(--spacing-lg);
   text-align: center;
   border-top: 1px solid var(--DORADO);
@@ -310,10 +398,7 @@ footer .barra img {
   height: auto;
 }
 
-/* =========================================
-   MEDIA QUERIES (RESPONSIVE)
-   ========================================= */
-
+/* Media Queries */
 @media (min-width: 1024px) {
   section {
     padding: 6rem var(--spacing-md);
@@ -344,7 +429,6 @@ footer .barra img {
     padding: 0.4rem 0.6rem;
   }
 
-  /* En móviles, forzamos 1 sola columna para las tarjetas */
   .cards-grid {
     grid-template-columns: 1fr;
   }

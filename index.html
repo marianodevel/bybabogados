@@ -15,8 +15,9 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link
-      href="https://fonts.googleapis.com/css2?family=Alatsi&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400&family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap"
       rel="stylesheet"
     />
 
@@ -166,64 +167,37 @@
           <div class="container">
             <div class="text-container">
               <h2>Contacto</h2>
-              <p>Contáctese con nosotros:</p>
+              <p class="intro-text">Contáctese con nosotros:</p>
 
               <div class="contact-info">
-                <a
-                  href="https://wa.me/5492966410354"
-                  target="_blank"
-                  style="
-                    display: flex;
-                    align-items: center;
-                    gap: 10px;
-                    color: inherit;
-                    text-decoration: none;
-                  "
-                >
+                <a href="https://wa.me/5492966410354" target="_blank">
                   <img
                     src="static/images/Digital_Glyph_Green.svg"
                     alt="WhatsApp"
                     width="32"
                     height="32"
                   />
-                  <p>+54 9 2966 41-0354</p>
+                  <span>+54 9 2966 41-0354</span>
                 </a>
               </div>
-              <p class="note" style="margin-bottom: 1rem">(solo WhatsApp)</p>
+              <p class="note">(solo WhatsApp)</p>
 
               <div class="contact-info">
-                <a
-                  href="mailto:bybabogados@proton.me"
-                  target="_blank"
-                  style="
-                    display: flex;
-                    align-items: center;
-                    gap: 10px;
-                    color: inherit;
-                    text-decoration: none;
-                  "
-                >
+                <a href="mailto:bybabogados@proton.me" target="_blank">
                   <img
                     src="static/images/email.svg"
                     alt="Email"
                     width="32"
                     height="32"
                   />
-                  <p>bybabogados@proton.me</p>
+                  <span>bybabogados@proton.me</span>
                 </a>
               </div>
 
-              <div class="contact-info" style="margin-top: 1rem">
+              <div class="contact-info address-item">
                 <a
                   href="https://www.google.com/maps/search/?api=1&query=Estrada+245+Rio+Gallegos+Argentina"
                   target="_blank"
-                  style="
-                    display: flex;
-                    align-items: center;
-                    gap: 10px;
-                    color: inherit;
-                    text-decoration: none;
-                  "
                 >
                   <img
                     src="static/images/location.svg"
@@ -231,13 +205,12 @@
                     width="32"
                     height="32"
                   />
-                  <p>Estrada 245 - Río Gallegos</p>
+                  <span>Estrada 245 - Río Gallegos</span>
                 </a>
               </div>
 
-              <p style="margin-top: 1.5rem">
-                O envíenos un mensaje a nuestras redes:
-              </p>
+              <p class="social-text">O envíenos un mensaje a nuestras redes:</p>
+
               <div class="social-media">
                 <a
                   href="https://www.facebook.com/profile.php?id=61575939807453"
@@ -267,8 +240,20 @@
                 </a>
               </div>
 
-              <p>Por urgencias, comunicarse telefónicamente al:</p>
-              <p class="highlight">2966-410354</p>
+              <div class="urgencies">
+                <p>Por urgencias, comunicarse telefónicamente al:</p>
+                <div class="phone-wrapper">
+                  <a href="tel:+542966410354">
+                    <img
+                      src="static/images/phone.svg"
+                      alt="Teléfono"
+                      width="32"
+                      height="32"
+                    />
+                    <span class="highlight">2966-410354</span>
+                  </a>
+                </div>
+              </div>
             </div>
 
             <div class="contact-image">
