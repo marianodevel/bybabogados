@@ -8,9 +8,9 @@
   --NEGRO: #0e0f11;
   --AZUL: #0d1621;
 
-  /* Typography UPDATE: Alatsi vuelve al texto, Merriweather para títulos */
-  --font-primary: "Merriweather", serif; /* Reemplaza a Playfair */
-  --font-secondary: "Alatsi", sans-serif; /* Restaurada */
+  /* Typography: Merriweather para autoridad en títulos, Alatsi para modernidad en texto */
+  --font-primary: "Merriweather", serif;
+  --font-secondary: "Alatsi", sans-serif;
 
   /* Spacing & Layout */
   --spacing-sm: 1rem;
@@ -43,8 +43,8 @@ body {
   font-family: var(--font-secondary);
   color: var(--CAMEL);
 
-  /* MEJORA: Tamaño base aumentado para que Alatsi se lea bien */
-  font-size: 1.125rem;
+  /* MEJORA: Aumentamos el tamaño base para que Alatsi sea legible y cómoda */
+  font-size: 1.125rem; /* aprox 18px */
   line-height: 1.6;
 
   padding-top: var(--nav-height);
@@ -64,7 +64,7 @@ body {
   background-repeat: no-repeat;
 }
 
-/* ACCESIBILIDAD: Foco visible */
+/* ACCESIBILIDAD: Foco visible de alto contraste */
 :focus-visible {
   outline: 3px solid var(--DORADO);
   outline-offset: 4px;
@@ -147,12 +147,12 @@ section {
 }
 
 #inicio h1 {
-  font-size: 3.5rem; /* Ajustado para Merriweather */
+  font-size: 3.5rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   font-weight: 900;
 }
 
-/* Button Styles (Call to Action) */
+/* Button Styles */
 .button {
   display: inline-block;
   background-color: var(--DORADO);
@@ -188,12 +188,15 @@ section {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Services Grid */
+/* --- SERVICES GRID FIX --- */
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  /* CORRECCIÓN: Reducimos el minmax a 13.5rem para permitir que entren 4 columnas
+     en laptops estándar (aprox 1100px de ancho disponible) */
+  grid-template-columns: repeat(auto-fit, minmax(13.5rem, 1fr));
   gap: var(--spacing-lg);
 }
+/* ------------------------- */
 
 .card {
   background-color: var(--CAMEL);
@@ -272,7 +275,7 @@ section {
   color: var(--AZUL);
 }
 
-/* Imagen de Contacto */
+/* Contact Image */
 .contact-image {
   width: 100%;
   height: 100%;
@@ -341,6 +344,7 @@ footer .barra img {
     padding: 0.4rem 0.6rem;
   }
 
+  /* En móviles, forzamos 1 sola columna para las tarjetas */
   .cards-grid {
     grid-template-columns: 1fr;
   }
