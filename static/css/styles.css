@@ -8,7 +8,7 @@
   --NEGRO: #0e0f11;
   --AZUL: #0d1621;
 
-  /* Typography: Cormorant Garamond para máxima distinción */
+  /* Typography */
   --font-primary: "Cormorant Garamond", serif;
   --font-secondary: "Open Sans", sans-serif;
 
@@ -70,14 +70,13 @@ p {
   max-width: 70ch;
 }
 
-/* Títulos con Cormorant Garamond: Necesitan peso para tener presencia */
 h1,
 h2,
 h3 {
   font-family: var(--font-primary);
   color: var(--DORADO);
   line-height: 1.2;
-  font-weight: 700; /* Negrita obligatoria para esta fuente fina */
+  font-weight: 700;
   margin-bottom: var(--spacing-sm);
 }
 
@@ -176,17 +175,14 @@ section {
   box-shadow: 0 6px 15px rgba(219, 168, 84, 0.4);
 }
 
-/* --- ESTILO GLASS "NATURAL" --- */
+/* --- ESTILO GLASS LIMPIO (Unified) --- */
 .container,
 .card {
-  /* Transparencia del 90%: Deja ver sutilmente el fondo borroso detrás */
+  /* Fondo sólido con ligera transparencia para nitidez total */
   background-color: rgba(254, 254, 218, 0.9);
-
-  /* Borde blanco semitransparente para definir el límite del "vidrio" */
   border: 1px solid rgba(255, 255, 255, 0.4);
-
   border-radius: 8px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15); /* Sombra suave para despegar del fondo */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
   color: var(--AZUL);
 }
 
@@ -215,7 +211,6 @@ section {
 
 .card:hover {
   transform: translateY(-5px);
-  /* Al hacer hover, aumentamos la opacidad y la sombra */
   background-color: rgba(254, 254, 218, 0.98);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
   border-color: rgba(255, 255, 255, 0.8);
@@ -223,11 +218,9 @@ section {
 
 .card h3 {
   margin-bottom: 0.5rem;
-  font-size: 1.6rem; /* Un poco más grande con Cormorant */
-  border-bottom: 2px solid var(--DORADO);
-  padding-bottom: 0.5rem;
-  display: inline-block;
-  width: fit-content;
+  font-size: 1.6rem;
+  padding-bottom: 0;
+  display: block;
 }
 
 .card ul {
@@ -262,20 +255,26 @@ section {
   transform: scale(1.05);
 }
 
-/* Contact Styles */
+/* --- CONTACT STYLES (REFINED HIERARCHY) --- */
 #contacto .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-lg);
-  align-items: start;
+  gap: 0;
+  align-items: stretch;
+  padding: 0;
+  overflow: hidden;
 }
 
-.intro-text {
-  margin-bottom: var(--spacing-md);
+.text-container {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
+/* Estilo general para items de contacto */
 .contact-info {
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.5rem;
 }
 
 .contact-info a {
@@ -299,49 +298,65 @@ section {
   flex-shrink: 0;
 }
 
+/* Nota pequeña debajo de WhatsApp */
 .note {
-  font-size: 0.9rem;
-  opacity: 0.75;
-  margin-top: -0.5rem;
-  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+  opacity: 0.7;
+  margin-top: -0.5rem; /* Pegado al item superior */
+  margin-bottom: 0; /* Sin espacio extra abajo */
   margin-left: 2.8rem;
+  font-style: italic;
 }
 
+/* Dirección (Separación visual) */
 .address-item {
-  margin-top: 1.5rem;
+  margin-top: 1.5rem; /* Separa lo físico de lo digital */
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(13, 22, 33, 0.05); /* Separador sutil opcional */
 }
 
-.social-text {
+/* Etiquetas de sección (Redes) */
+.section-label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  color: var(--DORADO); /* Contraste elegante */
   margin-top: 2rem;
-  margin-bottom: 0.8rem;
+  margin-bottom: 1rem;
 }
 
 .social-media {
   display: flex;
   flex-direction: row;
-  gap: 1.2rem;
+  gap: 1.5rem;
   margin-bottom: 2rem;
 }
 
 .social-media img {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2rem;
+  height: 2rem;
   transition: transform 0.2s;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  opacity: 0.9;
 }
 
 .social-media img:hover {
-  transform: scale(1.1);
+  transform: scale(1.15);
+  opacity: 1;
 }
 
+/* Urgencias (Bloque final destacado) */
 .urgencies {
-  margin-top: 1rem;
+  margin-top: auto;
   border-top: 1px solid rgba(13, 22, 33, 0.1);
   padding-top: 1.5rem;
 }
 
-.urgencies p {
+.urgency-label {
+  font-size: 1rem;
   margin-bottom: 0.5rem;
+  font-weight: 600;
 }
 
 .phone-wrapper a {
@@ -363,20 +378,30 @@ section {
   color: #000;
 }
 
-/* Contact Image */
+/* Imagen Contacto (Split + B&W) */
 .contact-image {
   width: 100%;
   height: 100%;
-  min-height: 350px;
-  border-radius: 4px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  min-height: 100%;
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0;
+  background-color: var(--AZUL);
 }
 
 .contact-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
+  filter: grayscale(100%) contrast(1.1);
+  opacity: 0.9;
+  transition: all 0.5s ease;
+}
+
+.contact-image:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
 }
 
 /* Footer */
@@ -405,7 +430,7 @@ footer .barra img {
   }
 
   #inicio h1 {
-    font-size: 5.5rem; /* Título principal más grande para lucir Garamond */
+    font-size: 5.5rem;
     line-height: 1.1;
   }
 
@@ -437,10 +462,14 @@ footer .barra img {
     grid-template-columns: 1fr;
   }
 
+  .text-container {
+    padding: 2rem 1.5rem;
+  }
+
   .contact-image {
-    min-height: 200px;
+    height: 250px;
+    min-height: 250px;
     order: -1;
-    margin-bottom: var(--spacing-md);
   }
 
   #inicio h1 {
