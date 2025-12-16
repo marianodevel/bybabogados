@@ -2,26 +2,30 @@ document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll("section");
   const navLinks = document.querySelectorAll("nav a");
 
-  const updateActiveLinks = () => {
-    let current = "";
-
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.clientHeight;
-      // Ajuste de 150px para compensar el menú fijo y anticipar el scroll
-      if (window.scrollY >= sectionTop - 150) {
-        current = section.getAttribute("id");
-      }
-    });
-
-    navLinks.forEach((link) => {
-      link.classList.remove("active");
-      if (link.getAttribute("href").includes(current)) {
-        link.classList.add("active");
-      }
-    });
+  /* Configuración para detectar cuando una sección ocupa el centro de la pantalla */
+  const observerOptions = {
+    root: null,
+    rootMargin: "-50% 0px -50% 0px",
+    threshold: 0,
   };
 
-  window.addEventListener("scroll", updateActiveLinks);
-  updateActiveLinks(); // Ejecutar al cargar
+  /* Función que se ejecuta solo cuando cambia la visibilidad de una sección */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute("id");
+
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === `#${id}`) {
+            link.classList.add("active");
+          }
+        });
+      }
+    });
+  }, observerOptions);
+
+  sections.forEach((section) => {
+    observer.observe(section);
+  });
 });
